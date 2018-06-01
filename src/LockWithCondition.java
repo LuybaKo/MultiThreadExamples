@@ -9,6 +9,7 @@ public class LockWithCondition {
         Consumer consumer = new Consumer(store);
         new Thread(producer).start();
         new Thread(consumer).start();
+        Store.printInfo();
     }
 
     // Класс Магазин, хранящий произведенные товары
@@ -65,6 +66,10 @@ public class LockWithCondition {
             } finally {
                 locker.unlock();
             }
+        }
+        //создали пустой метод
+        public static void printInfo(){
+            System.out.println("Info");
         }
     }
 
